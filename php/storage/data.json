@@ -1,0 +1,17 @@
+[
+    {
+        "name": "apple",
+        "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+        "price": 100
+    },
+    {
+        "name": "orange",
+        "image": "https://images.unsplash.com/photo-1591206369811-4eeb2f03bc95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+        "price": 150
+    },
+    {
+        "name": "pear",
+        "image": "https://images.unsplash.com/photo-1514756331096-242fdeb70d4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+        "price": 120
+    }
+]

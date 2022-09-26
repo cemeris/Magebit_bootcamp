@@ -1,0 +1,29 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css" />
+
+<div class="wrapper">
+  <h1>API requests</h1>
+  <button class="xhttp_btn">xhttp method</button>
+  <button class="fetch_btn">fetch method</button>
+  <pre class="output"></pre>
+</div>
+
+<div class="images"></div>
+
+<script>
+  let output_elm = document.querySelector(".output");
+  function output(message) {
+    output_elm.prepend(message + "\n");
+  }
+
+  let images_elm = document.querySelector(".images");
+  function addImg(src) {
+    const img = document.createElement("img");
+    img.src = src;
+    images_elm.append(img);
+  }
+</script>
+<script src="xhttp.js"></script>
+<script src="fetch.js"></script>

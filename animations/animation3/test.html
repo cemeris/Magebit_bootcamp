@@ -1,0 +1,18 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+
+<script>
+  async function getRequest(url, callback = null) {
+    const res = await fetch(url);
+    const result = await res.json();
+
+    if (callback != null) {
+      callback(result);
+    }
+  }
+
+  getRequest("https://uselessfacts.jsph.pl/random.json", function (response) {
+    console.log(response);
+  });
+</script>

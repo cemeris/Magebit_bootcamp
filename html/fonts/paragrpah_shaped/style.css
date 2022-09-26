@@ -1,0 +1,12 @@
+p {
+    font-size:10px;
+
+}
+
+.el1 {
+    display:inline-block;
+    float:right;
+    width:400px;
+    height:400px;
+    shape-outside:polygon(0 0, 64% 0, 99% 0, 100% 100%, 0 100%, 27% 87%, 51% 69%, 57% 54%, 62% 33%, 36% 15%);
+}

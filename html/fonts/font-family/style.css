@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap');
+@import url('fonts/fonts.css');
+* {
+    font-family: ubuntu;
+    color: rgb(55, 55, 55);
+}
+
+h3 {
+    font-family:'Courier New', Courier, monospace;
+    text-transform: uppercase;
+}
+
+code {
+    color: #7D00E1;
+    padding: 0 6px;
+    background:rgba(24, 24, 24, 0.103);
+    border-radius:2px;
+    font-family: 'Uchen', serif;
+}
+
+.example2 h2 {
+    font-family: Inconsolata;
+}
+
+.example2 h3 {
+    font-family: 'Dancing Script';
+    font-style:italic;
+}
+
+p {
+    font-family: 'Dancing Script';
+    max-width:300px;
+    line-height:3.5em;
+    text-align: left;
+    word-spacing: 0.5em;
+}
+
+p::first-line {
+    background: #a58cb9;
+}
+
+p a{
+    text-decoration:none;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}
+
+.special {
+    display:inline-block;
+    width:10px;
+    height:10px;
+    background: purple;
+    vertical-align: middle;
+    margin-top:5px;
+}

@@ -1,0 +1,23 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<link rel="stylesheet" href="style.css" />
+
+<div class="loader_example">
+  <div class="loader"></div>
+  <div class="content" style="display: none">
+    <img
+      style="width: 500px"
+      src="https://images.unsplash.com/photo-1659986854215-7b263fb9d4cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2833&q=80"
+      alt=""
+    />
+  </div>
+</div>
+
+<script>
+  document.body.onload = function () {
+    document.querySelector(".loader").remove();
+    document.querySelector(".content").style.display = "";
+  };
+</script>

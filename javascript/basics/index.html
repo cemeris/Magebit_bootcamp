@@ -1,0 +1,36 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css" />
+
+<div>
+  <pre class="output"></pre>
+  <button onclick="this.textContent++">1</button>
+
+  <p class="number_value">1</p>
+  <button class="example2" data-increment="1">increase</button>
+  <button class="example2" data-increment="-1">decrease</button>
+  <button class="example2" data-increment="10">increase + 10</button>
+  <button class="example2" data-increment="-10">decrease - 10</button>
+</div>
+
+<script>
+  let a = 44;
+  let b = 21;
+
+  output(a + b);
+  let c = sum(1, 2);
+
+  output(c);
+
+  function sum(n1, n2) {
+    let sum = n1 + n2;
+    return sum;
+  }
+
+  function output(message) {
+    document.querySelector(".output").append(message + "\n");
+  }
+</script>
+
+<script src="script.js"></script>

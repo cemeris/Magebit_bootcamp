@@ -1,0 +1,67 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="style.css" />
+
+<!--
+  B - block .block
+  E - element .block__element
+  M - modifier .block__element--active
+ -->
+<div class="top_nav">
+  <div class="top_nav__container">
+    <a href="#" class="top_nav__logo"
+      ><img src="logo.svg" alt="Real estate"
+    /></a>
+    <div class="top_nav__right">
+      <div
+        class="top_nav__hamburger"
+        onclick="this.classList.toggle('top_nav__hamburger--active')"
+      >
+        <svg
+          width="18"
+          height="12"
+          viewBox="0 0 18 12"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="18" height="2" />
+          <rect y="5" width="18" height="2" />
+          <rect y="10" width="18" height="2" />
+        </svg>
+      </div>
+
+      <nav class="top_nav__menu">
+        <div>
+          <a href="#about" class="top_nav__item--active">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contacts">Contacts</a>
+          <a href="#" class="top_nav__item">Join Us</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<section id="about">
+  <h2>About</h2>
+  <div class="animation"></div>
+</section>
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="calculated"></div>
+</section>
+<section id="contacts">
+  <h2>Contacts</h2>
+</section>
+
+<div class="cards" include-HTML="/html/filler/cards.html"></div>
+
+<script src="http://materials.codes/html/filler/cards.js"></script>
+<script src="script.js"></script>
+
+<script>
+  document.querySelector(".top_nav__menu").onclick = function (event) {
+    document.querySelector(".hamburger").classList.remove("active");
+  };
+</script>

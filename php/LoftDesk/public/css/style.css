@@ -1,0 +1,32 @@
+body {
+    background: #E9E5D6;
+
+}
+
+.section {
+    max-width:1600px;
+    margin:auto;
+    border:4px solid red;
+    position:relative;
+    display:flex;
+
+}
+#top_level_header {
+    background: linear-gradient(90deg, rgba(172,185,146,1) 59%, transparent 59%);
+    height:100vh;
+    max-height:1000px;
+}
+
+.content {
+    z-index:1;
+}
+
+.shape1{
+    position:absolute;
+    right:0;
+    top:0;
+    width:900px;
+    height:100%;
+    background:url(../img/shape1.svg);
+    background-repeat: no-repeat;
+}

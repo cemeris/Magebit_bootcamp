@@ -1,0 +1,91 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="style.css" />
+
+<div class="wrapper">
+  <form action="api.php?api-name=add-todo" method="post">
+    <h3>Todo list</h3>
+    <label for="">Task</label>
+    <input type="text" name="task_message" />
+    <button type="submit">add</button>
+  </form>
+
+  <div class="todo_list"></div>
+
+  <div class="template tood_list__item">
+    <div>
+      <input type="checkbox" />
+      <span class="text">fasdfsd</span>
+    </div>
+    <div class="options">
+      <span class="edit">✏️</span><span class="delete">x</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const forms = document.querySelectorAll("form");
+  const todo_list = document.querySelector(".todo_list");
+  const template = document.querySelector(".template");
+
+  for (let i = 0; i < forms.length; i++) {
+    forms[i].onsubmit = function (event) {
+      event.preventDefault();
+      const data = new FormData(this);
+
+      if (this.method == "post") {
+        fetch(this.action, {
+          method: "post",
+          body: data,
+        })
+          .then((response) => response.json())
+          .then((result) => addResponseHook(result, data));
+      }
+
+      this.reset();
+    };
+  }
+
+  fetch("api.php?api-name=get-todos")
+    .then((response) => response.json())
+    .then((result) => getResponseHook(result));
+
+  function getResponseHook(response) {
+    if (response.status) {
+      for (let id in response.entries) {
+        const entry = response.entries[id];
+        displayTask(id, entry.message, entry.status);
+      }
+    }
+  }
+
+  function addResponseHook(response, data) {
+    if (response.status) {
+      displayTask(response.id, data.get("task_message"));
+    }
+  }
+
+  function displayTask(id, message, status = false) {
+    const task = template.cloneNode(true);
+    task.classList.remove("template");
+    task.querySelector(".text").textContent = message + " " + Math.random();
+    task.dataset.id = id;
+
+    task.querySelector(".delete").onclick = function (event) {
+      fetch("api.php?api-name=delete-todo&id=" + id, {
+        method: "delete",
+      })
+        .then((response) => response.json())
+        .then((result) => deleteTaskHook(result, task));
+    };
+    todo_list.append(task);
+  }
+
+  function deleteTaskHook(result, task) {
+    if (result.status) {
+      task.remove();
+    }
+  }
+</script>

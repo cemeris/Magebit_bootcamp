@@ -1,0 +1,40 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+
+<form action="api.php?api-name=subscribe" method="post">
+  <h3>Subscribe</h3>
+  <label for="">Email</label>
+  <input type="email" name="subscriber_email" />
+  <button type="submit">subscribe</button>
+</form>
+
+<button class="clickable">button</button>
+
+<script>
+  const forms = document.querySelectorAll("form");
+
+  for (let i = 0; i < forms.length; i++) {
+    forms[i].onsubmit = function (event) {
+      event.preventDefault();
+      // const input = this.querySelector("input");
+      // const data = { subscriber_email: input.value };
+      const data = new FormData(this);
+
+      if (this.method == "post") {
+        fetch(this.action, {
+          method: "post",
+          body: data,
+          /*
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          */
+        }).then((response) => console.log(response));
+      } else {
+        //...
+      }
+    };
+  }
+</script>

@@ -1,0 +1,11 @@
+.example3 {
+    width:300px;
+background:rgb(29, 27, 27);
+}
+p {
+    font-size:4px;
+    -webkit-background-clip: text;
+    color:transparent;
+    background-image:url(https://images.unsplash.com/photo-1479750178258-aec5879046ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1099&q=80);
+    background-size:cover;
+}

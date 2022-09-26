@@ -1,0 +1,61 @@
+
+body {
+    background:#F0F2F5;
+
+}
+.card {
+    background: #fff;
+    width: 502px;
+    min-height: 12rem;
+    border-radius: 0.5rem;
+
+    &__profile_wrapper {
+        width:fit-content;
+        transform: rotate(40deg) rotate(50deg);
+    }
+    &__profile_image {
+
+        padding: 16.5px;
+        width:0;
+        background:black url(https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=40&q=80);
+        border-radius:50%;
+        &:hover {
+
+        }
+    }
+
+    &__slides {
+        width:100%;
+        display:flex;
+        overflow-x: hidden;
+        gap:5px;
+
+        &:hover > .card__slide:first-child {
+            margin-left:-100px;
+            transition: 2s;
+        }
+    }
+
+    &__slide{
+        transition: 2s;
+        img {
+            width:300px;
+        }
+    }
+}
+
+
+.test {
+    font-size:30px;
+    background: red;
+    @media screen and (max-width:500px) {
+        background: yellow;
+    }    
+}
+
+@media screen and (max-width:400px) {
+    .card__profile_image {
+        transform: scale(2);
+    }
+
+}

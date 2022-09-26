@@ -1,0 +1,121 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+
+<style>
+  body {
+    background: rgb(216, 216, 216);
+  }
+  .wrapper {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wrapper .card {
+    background: #fff;
+    width: 90%;
+    max-width: 25rem;
+    min-height: 12rem;
+    border-radius: 10px;
+  }
+
+  .wrapper .loading {
+    background: rgb(255, 251, 194);
+  }
+
+  .card:first-child {
+    display: none;
+  }
+
+  .end {
+    background: rgb(240, 164, 164);
+    width: 90%;
+    max-width: 25rem;
+    min-height: 2rem;
+    border-radius: 10px;
+  }
+</style>
+
+<div onload="alert('test1')">
+  test1
+  <img src="https://images.dog.ceo/breeds/borzoi/n02090622_6372.jpg" alt="" />
+</div>
+
+<div class="card loading" style="display: none"></div>
+<div class="wrapper">
+  <div class="card" onload="console.log('test1')" style="display: none">
+    <div class="text"></div>
+    <img class="img" onload="console.log('test2')" src="" alt="" />
+  </div>
+</div>
+<div class="end"></div>
+
+<script src="fetch.js"></script>
+<script>
+  document.querySelector("body").onload = function () {
+    console.log("test111");
+  };
+  wrapper = document.querySelector(".wrapper");
+  card = document.querySelector(".wrapper .card");
+  loding_el = document.querySelector(".loading");
+  end = document.querySelector(".end");
+
+  window.onscroll = addPostIfTheyShouldBeAdded;
+
+  function addPostIfTheyShouldBeAdded() {
+    if (end.offsetTop < window.pageYOffset + window.innerHeight) {
+      addPosts();
+    }
+  }
+
+  addPostIfTheyShouldBeAdded();
+
+  function addPosts() {
+    for (let i = 0; i < 2; i++) {
+      wrapper.append(loding_el);
+      loding_el.style.display = "block";
+      fetchAPI(
+        "https:\/\/dog.ceo/api/breeds/image/random",
+        function (response) {
+          addPost({ text: "Lorem ipsum", src: response.message });
+        }
+      );
+    }
+  }
+
+  function addPost(settings) {
+    const new_card = card.cloneNode(true);
+    const img = new_card.querySelector(".img");
+
+    new_card.querySelector(".text").textContent = settings.text;
+    img.src = settings.src;
+
+    img.onload = function () {
+      loding_el.style.display = "none";
+      new_card.style.display = "block";
+    };
+
+    wrapper.append(new_card);
+  }
+
+  addPosts({ text: "Lorem ipsum" });
+
+  // let observer = new IntersectionObserver(
+  //   function () {
+  //     for (let i = 0; i <= 5; i++) {
+  //       const new_card = card.cloneNode();
+  //       wrapper.append(new_card);
+  //     }
+  //     this.observe(end);
+  //   },
+  //   {
+  //     root: document.querySelector("body"),
+  //     rootMargin: "0px",
+  //     threshold: 1.0,
+  //   }
+  // );
+
+  // observer.observe(end);
+</script>

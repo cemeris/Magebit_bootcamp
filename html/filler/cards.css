@@ -1,0 +1,42 @@
+.cards {
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    max-width:1200px;
+    margin:20px 10px;
+    flex-wrap:wrap;
+    margin:50px auto;
+}
+
+.card {
+    background:#fff;
+}
+
+.card__textblock {
+    padding:14px 16px 16px 16px;
+}
+
+.card__heading {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
+    color: #007519;
+}
+
+.card__text {
+    font-family: 'Inter';
+    font-size: 13px;
+    line-height: 19px;
+    color: #5F5A5A
+
+}
+
+.card__btn {
+    display:inline-block;
+    cursor:pointer;
+    margin-top:25px;
+    padding:4px 16px;
+    background: #007519;
+    color:#fff;
+}

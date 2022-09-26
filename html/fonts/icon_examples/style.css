@@ -1,0 +1,26 @@
+nav {
+    display:flex;
+    font-size:50px;
+    gap:1.5em;
+}
+nav a {
+    text-decoration:none;
+    color: red;
+}
+
+nav a::before {
+    display:inline-block;
+    content:"";
+    border-top:0.4em solid grey;
+    width:0.4em;
+    height:0.4em;
+}
+
+.special{
+    color: yellowgreen;
+}
+
+.larger{
+    font-size:2em;
+    border-bottom:0.5em solid red;
+}

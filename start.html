@@ -1,0 +1,49 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<style>
+  body {
+    font-family: Inter;
+    margin: 0;
+  }
+  .wrapper {
+    background: grey;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    position: relative;
+  }
+  .thumbnail {
+    width: 100%;
+  }
+
+  .buttons {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    display: flex;
+  }
+
+  .btn {
+    padding: 1em 1.2em;
+    background: #006eff;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+  }
+</style>
+
+<div class="wrapper">
+  <div class="container">
+    <img class="thumbnail" src="thumbnail.jpg" alt="" />
+    <div class="buttons">
+      <a href="/" class="btn next_page">Start</a>
+    </div>
+  </div>
+</div>
